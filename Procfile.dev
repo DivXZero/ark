@@ -1,0 +1,3 @@
+web: apache2ctl -D FOREGROUND
+#webpack: bundle exec bin/webpack-dev-server
+dot: echo 'working'
