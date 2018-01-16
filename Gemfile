@@ -9,6 +9,7 @@ end
 gem 'rails', '~> 5.1.4'
 gem 'puma', '~> 3.7'
 gem 'webpacker', '~> 3.2'
+gem 'sucker_punch', '~> 2.0', '>= 2.0.4'
 
 # Database
 gem 'mysql2', '>= 0.3.18', '< 0.5'
@@ -24,6 +25,7 @@ gem 'haml', '~> 5.0', '>= 5.0.4'
 # Util
 gem 'git', '~> 1.3'
 gem 'foreman', '~> 0.84.0'
+gem 'rails-settings-cached', '~> 0.6.6'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

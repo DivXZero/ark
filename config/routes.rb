@@ -10,6 +10,6 @@ Rails.application.routes.draw do
   end
 
   constraints(lambda { |req| req.format == :json }) do
-    # RESTful routes
+    get '/info', to: 'pages#info'
   end
 end
