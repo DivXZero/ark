@@ -4,13 +4,18 @@
   "dependencies": {
     "@blueprintjs/core": "^1.35.0",
     "@rails/webpacker": "^3.2.0",
+    "babel-polyfill": "^6.26.0",
     "babel-preset-react": "^6.24.1",
     "coffeescript": "1.12.7",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-addons-css-transition-group": "^15.6.2",
     "react-dom": "^16.2.0",
-    "react-router-dom": "^4.2.2"
+    "react-redux": "^5.0.6",
+    "react-router-dom": "^4.2.2",
+    "redux": "^3.7.2",
+    "redux-form": "^7.2.1",
+    "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
     "webpack-dev-server": "^2.10.1"

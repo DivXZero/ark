@@ -13,7 +13,7 @@ import Updates from './Updates'
 const Configure = () => (
   <div>
     <h3 className="page-title">Configuration</h3>
-    <Tabs id="config-tabs" vertical={true} large={true}>
+    <Tabs id="config-tabs" large={true}>
       <Tab id="config-repo-tab" panel={<Repo />}><Icon iconName="git-repo" /> Git Repository</Tab>
       <Tab id="config-sql-tab" panel={<Database />}><Icon iconName="database" /> SQL Database</Tab>
       <Tab id="config-app-updates" panel={<Updates />}><Icon iconName="refresh" /> Updates</Tab>

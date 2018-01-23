@@ -1,9 +1,11 @@
 # config/app.yml for rails-settings-cached
 defaults: &defaults
-  foo: "Foo"
-  bar: 123
-  app:
-    repo: "https://github.com/divxzero/ark"
+  config:
+    repo:
+      url: ''
+      watch: false
+    app:
+      autoUpdate: true
 
 development:
   <<: *defaults
