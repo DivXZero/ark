@@ -38,12 +38,12 @@ export function configFetchData(url) {
           throw Error(response.statusText)
         }
 
-        dispatch(configIsLoading(false))
-
         return response
       })
       .then((response) => response.json())
       .then((config) => dispatch(configFetchSuccess(config)))
       .catch(() => dispatch(configHasErrored(true)))
+
+    dispatch(configIsLoading(false))
   }
 }

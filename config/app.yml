@@ -2,7 +2,7 @@
 defaults: &defaults
   config:
     repo:
-      url: ''
+      url: 'https://github.com/DivXZero/grommet-test'
       watch: false
     app:
       autoUpdate: true
