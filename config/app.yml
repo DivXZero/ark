@@ -4,6 +4,8 @@ defaults: &defaults
     repo:
       url: 'https://github.com/DivXZero/grommet-test'
       watch: false
+    database:
+      sql: ''
     app:
       autoUpdate: true
 

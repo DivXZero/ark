@@ -35,12 +35,12 @@ export function configFetchData(url) {
     })
       .then((response) => {
         if (!response.ok) {
+          console.log(response.statusText)
           throw Error(response.statusText)
         }
 
-        return response
+        return response.json()
       })
-      .then((response) => response.json())
       .then((config) => dispatch(configFetchSuccess(config)))
       .catch(() => dispatch(configHasErrored(true)))
 
