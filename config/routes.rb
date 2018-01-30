@@ -12,6 +12,6 @@ Rails.application.routes.draw do
   constraints(lambda { |req| req.format == :json }) do
     get '/info', to: 'pages#info'
     get '/config', to: 'settings#get'
-    # post '/setting/set', to: 'settings#set'
+    post '/config', to: 'settings#set'
   end
 end

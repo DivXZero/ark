@@ -11,7 +11,7 @@ WORKDIR $APP_PATH
 
 COPY host.conf /etc/apache2/sites-available/000-default.conf
 
-COPY Gemfile Gemfile.lock ./
+COPY Gemfile Gemfile.lock package.json ./
 RUN bundle
 
 ADD . .

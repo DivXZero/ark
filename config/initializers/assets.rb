@@ -10,6 +10,7 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 Rails.application.config.assets.paths << "#{Rails.root}/node_modules/normalize.css/"
 Rails.application.config.assets.paths << "#{Rails.root}/node_modules/@blueprintjs/core/dist/"
 Rails.application.config.assets.paths << "#{Rails.root}/node_modules/@blueprintjs/core/resources/"
+Rails.application.config.assets.paths << "#{Rails.root}/node_modules/"
 
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in the app/assets

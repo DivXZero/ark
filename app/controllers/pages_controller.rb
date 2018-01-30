@@ -5,19 +5,18 @@ class PagesController < ApplicationController
   # Info route to return things such as environment variables
   # dependency versions, etc
   def info
-    # Grab settings from config/app.yml
-    info = Setting.get_all('config')
+    repo = Rugged::Repository.discover('.')
+    remote = repo.remotes['origin']
+    check = remote.check_connection(:fetch)
+    fetch = remote.fetch
 
-    # Grab repo details
-    g = Git.open('.')
-    up_to_date = g.fetch('origin').empty?
-    info.merge!(
-      git: {
-        config: g.config
-      },
-      up_to_date: up_to_date
-    )
-
-    render json: info
+    render json: {
+      config: Setting['config'],
+      git_global_config: Rugged::Config.global,
+      status: {
+        connection: check,
+        fetch: fetch
+      }
+    }
   end
 end

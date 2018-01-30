@@ -5,17 +5,16 @@ import { reduxForm } from 'redux-form'
 
 import { Button, Intent } from '@blueprintjs/core'
 
-import { configFetchData } from '../../actions/config'
+import { configFetchData, configSubmitData } from '../../actions/config'
 import { config as loadConfig } from '../../reducers/config'
 
 class Form extends Component {
   componentDidMount() {
-    this.props.fetchData('config')
+    this.props.fetchData()
   }
 
   submit(values) {
-    // TODO: Wire this up so it updates store/backend
-    console.log(values)
+    this.props.submitData(values)
   }
 
   render() {
@@ -30,7 +29,7 @@ class Form extends Component {
     return (
       <form onSubmit={this.props.handleSubmit(this.submit.bind(this))}>
         {this.props.children}
-        <Button type="submit" intent={Intent.PRIMARY} disabled={this.props.submitting}>Apply</Button>
+        <Button type="submit" intent={Intent.PRIMARY} disabled={this.props.pristine || this.props.submitting}>Apply</Button>
         <Button onClick={this.props.reset} disabled={this.props.pristine || this.props.submitting}>Reset</Button>
       </form>
     )
@@ -54,7 +53,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchData: (url) => dispatch(configFetchData(url))
+    fetchData: () => dispatch(configFetchData()),
+    submitData: (values) => dispatch(configSubmitData(values))
   }
 }
 

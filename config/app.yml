@@ -2,8 +2,9 @@
 defaults: &defaults
   config:
     repo:
-      url: 'https://github.com/DivXZero/grommet-test'
-      watch: false
+      url: 'https://github.com/DivXZero/cancan'
+      username: ''
+      password: ''
     database:
       sql: ''
     app:

@@ -23,7 +23,8 @@ gem 'sass-rails', '~> 5.0'
 gem 'haml', '~> 5.0', '>= 5.0.4'
 
 # Util
-gem 'git', '~> 1.3'
+# gem 'git', '~> 1.3'
+gem 'rugged', '~> 0.26.0'
 gem 'foreman', '~> 0.84.0'
 gem 'rails-settings-cached', '~> 0.6.6'
 

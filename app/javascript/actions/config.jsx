@@ -1,5 +1,5 @@
 
-import { BASE_URL } from '../util/Env'
+import { BASE_URL, JSON_HEADERS } from '../util/Env'
 
 export function configHasErrored(bool) {
   return {
@@ -22,16 +22,13 @@ export function configFetchSuccess(config) {
   }
 }
 
-export function configFetchData(url) {
+export function configFetchData() {
   return (dispatch) => {
     dispatch(configIsLoading(true))
 
-    fetch(BASE_URL + '/' + url, {
+    fetch(BASE_URL + '/config', {
       method: 'GET',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      }
+      headers: JSON_HEADERS
     })
       .then((response) => {
         if (!response.ok) {
@@ -41,7 +38,31 @@ export function configFetchData(url) {
 
         return response.json()
       })
-      .then((config) => dispatch(configFetchSuccess(config)))
+      .then((response) => dispatch(configFetchSuccess(response)))
+      .catch(() => dispatch(configHasErrored(true)))
+
+    dispatch(configIsLoading(false))
+  }
+}
+
+export function configSubmitData(config) {
+  return (dispatch) => {
+    dispatch(configIsLoading(true))
+
+    fetch(BASE_URL + '/config', {
+      method: 'POST',
+      headers: JSON_HEADERS,
+      body: JSON.stringify({ "config": config })
+    })
+      .then((response) => {
+        if (!response.ok) {
+          console.log(response.statusText)
+          throw Error(response.statusText)
+        }
+
+        return response.json()
+      })
+      .then((response) => dispatch(configFetchSuccess(response)))
       .catch(() => dispatch(configHasErrored(true)))
 
     dispatch(configIsLoading(false))
