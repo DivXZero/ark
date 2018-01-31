@@ -110,7 +110,7 @@ libmariadbd-dev
 # Wordpress
 # *************************
 
-# Install wordpress CLI utility, setup wrapper to make calls without running into permissions issues
+# Install wordpress CLI utility
 sudo curl -o /bin/wp-cli.phar https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
-sudo echo "#!/bin/sh\nsudo -E -u www-data /bin/wp-cli.phar \$*" > /bin/wp && \
+# sudo echo "#!/bin/sh\nsudo -E -u www-data /bin/wp-cli.phar \$*" > /bin/wp && \
 sudo chmod +x /bin/wp /bin/wp-cli.phar
