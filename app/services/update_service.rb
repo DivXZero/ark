@@ -8,12 +8,9 @@ class UpdateService
   end
 
   def perform
-    # TODO: Run any pre & post-update scripts
     # TODO: Record output to db and display in view
     if (check)
-      Rails.logger.debug(`git pull`)
-      # bundle install && yarn install (if RoR)
-      Rails.logger.debug(`sudo service apache2 restart`)
+      Rails.logger.debug(`./scripts/update.sh`)
     else
       true
     end

@@ -1,8 +1,10 @@
 #!/bin/bash
 
-APP_PATH="/var/www/wpdeploybot"
+APP_PATH="/var/www/ark"
 
 cd $APP_PATH
+
+git pull
 
 bundle install
 yarn install
