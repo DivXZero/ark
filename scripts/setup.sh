@@ -8,6 +8,9 @@ RUBY_VERSION = "2.4.3"
 DEBIAN_FRONTEND = "noninteractive"
 APP_PATH = "/var/www/wpdeploybot"
 
+# Set the working directory
+cd $APP_PATH
+
 
 # **************************************************
 # Updates
