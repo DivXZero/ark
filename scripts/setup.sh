@@ -102,8 +102,10 @@ sudo a2enmod rewrite
 
 sudo apt-get update
 sudo apt-get install -y \
+mariadb-server \
 libmysqlclient-dev \
 libmariadbd-dev
+mysql_secure_installation
 
 
 # *************************
@@ -114,3 +116,10 @@ libmariadbd-dev
 sudo curl -o /bin/wp-cli.phar https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 # sudo echo "#!/bin/sh\nsudo -E -u www-data /bin/wp-cli.phar \$*" > /bin/wp && \
 sudo chmod +x /bin/wp /bin/wp-cli.phar
+
+
+# **************************************************
+# Initialize
+# **************************************************
+
+./scripts/update.sh
