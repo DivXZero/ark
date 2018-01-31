@@ -1,6 +1,8 @@
 #!/bin/bash
 
-cd ../
+APP_PATH="/var/www/wpdeploybot"
+
+cd $APP_PATH
 
 bundle install
 yarn install

@@ -9,7 +9,7 @@ DEBIAN_FRONTEND="noninteractive"
 APP_PATH="/var/www/wpdeploybot"
 
 cd $APP_PATH
-
+# TODO: Export the APP_PATH to make it permanent
 
 # **************************************************
 # Updates
