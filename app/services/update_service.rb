@@ -12,6 +12,7 @@ class UpdateService
     # TODO: Record output to db and display in view
     if (check)
       Rails.logger.debug(`git pull`)
+      # bundle install && yarn install (if RoR)
       Rails.logger.debug(`sudo service apache2 restart`)
     else
       true

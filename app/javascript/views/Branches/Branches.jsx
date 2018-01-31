@@ -1,7 +1,10 @@
 import React from 'react'
 
 const Branches = () => (
-  <h3>Branches</h3>
+  <div>
+    <h3>Branches</h3>
+    <hr />
+  </div>
 )
 
 export default Branches
