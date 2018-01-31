@@ -14,11 +14,9 @@ default: &default
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   min_messages: warning
-  host: db
-  username: root
-  password: m4g1c!
-  # socket: /var/run/mysqld/mysqld.sock
-  # host: localhost
+  host: <%= ENV.fetch("DB_HOST") %>
+  username: <%= ENV.fetch("DB_USERNAME") %>
+  password: <%= ENV.fetch("DB_PASSWORD") %>
 
 development:
   <<: *default

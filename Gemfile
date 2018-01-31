@@ -23,6 +23,7 @@ gem 'haml', '~> 5.0', '>= 5.0.4'
 gem 'sass-rails', '~> 5.0'
 
 # Util
+gem 'dotenv-rails', '~> 2.2', '>= 2.2.1'
 gem 'rails-settings-cached', '~> 0.6.6'
 gem 'pattern_generator', '~> 0.1.0'
 gem 'foreman', '~> 0.84.0'

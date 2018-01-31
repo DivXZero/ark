@@ -5,7 +5,7 @@ MAINTAINER Nick Brabant <nick@juliabalfour.com>
 ENV APP_PATH /var/www/ark
 
 # These Environment variables are environment specific
-ENV BASE_URL http://localhost:8080
+# ENV BASE_URL http://localhost:8080
 
 WORKDIR $APP_PATH
 

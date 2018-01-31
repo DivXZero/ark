@@ -4,8 +4,6 @@
 # Variables
 # **************************************************
 
-# RUBY_VERSION="2.4.3"
-DEBIAN_FRONTEND="noninteractive"
 APP_PATH="/var/www/ark"
 
 cd $APP_PATH
@@ -105,9 +103,9 @@ sudo apt-get install -y \
 mariadb-server \
 libmysqlclient-dev \
 libmariadbd-dev
-sudo mysql_secure_installation
+sudo DEBIAN_FRONTEND=noninteractive mysql_secure_installation
 
-# sudo mysql
+sudo mysql -e "GRANT ALL PRIVILEGES ON *.* TO '${DB_USERNAME}'@'localhost' IDENTIFIED BY '${DB_PASSWORD}';"
 # > GRANT ALL PRIVILEGES ON *.* TO 'username'@'localhost' IDENTIFIED BY 'password';
 
 
