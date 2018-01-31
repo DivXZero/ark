@@ -2,6 +2,7 @@ class UpdateService
   attr_reader :repo, :remote
 
   def initialize(path = '.', branch = 'master')
+    @path = path
     @repo = Rugged::Repository.discover(path)
     @repo.checkout(branch)
     @remote = @repo.remotes['origin']
@@ -18,6 +19,9 @@ class UpdateService
 
   # Returns true if updates are pending
   def check
+    # Check if auto-updates are enabled
+    return false if (@path == '.' && Setting['config']['app']['autoUpdate'])
+
     begin
       if (@remote.fetch[:total_objects] > 0)
         true
